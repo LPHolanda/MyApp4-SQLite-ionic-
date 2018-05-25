@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>adiciona-cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-fab top right edge>
+    <button ion-fab mini>
+      <ion-icon name="add"></ion-icon> 
+    </button>
+  </ion-fab>
+
+  <form (ngSubmit)="cadastraCliente()" #formulario="ngForm">  
+    <ion-item>
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input [(ngModel)]="cliente.nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Fone:</ion-label>
+      <ion-input [(ngModel)]="cliente.fone" name="fone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input [(ngModel)]="cliente.email" name="email"></ion-input>
+    </ion-item>
+    <button mini ion-fab (click)="formulario.ngSubmit.emit()">
+      Cadastrar
+    </button>
+  </form>
+</ion-content>
